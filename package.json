@@ -1,0 +1,35 @@
+{
+  "name": "chatsphere",
+  "version": "1.0.0",
+  "description": "A real-time chat application built with Node.js, Socket.io, and Express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abutler911/chatsphere.git"
+  },
+  "keywords": [
+    "chat",
+    "real-time",
+    "nodejs",
+    "socket.io",
+    "express"
+  ],
+  "author": "Andrew Butler | abutler911@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^8.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
