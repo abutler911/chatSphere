@@ -34,7 +34,7 @@ app.use(express.static("public"));
 
 // Middleware for body parsing
 app.use(express.urlencoded({ extended: true }));
-
+app.use(express.json());
 // Session configuration
 app.use(
   session({
@@ -45,7 +45,7 @@ app.use(
 );
 
 // Define routes
-// app.use("/", registerRouter);
+app.use("/", registerRouter);
 // app.use("/", authRouter);
 // app.use("/", chatRouter);
 // app.use("/", logoutRouter);

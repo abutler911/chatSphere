@@ -4,24 +4,37 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Roboto", sans-serif;
+  background-color: #efefef;
 }
 
 body {
   margin: 0;
 }
 
+h1 {
+  color: #128c7e;
+}
+
+.lead {
+  font-size: 1rem;
+  color: #000;
+  font-weight: 500;
+}
+
 .btn-success {
   background-color: #128c7e;
   border-color: #128c7e;
+  color: #000;
 }
 
 .btn-success:hover {
-  background-color: #107c69;
+  background-color: #fff;
   border-color: #107c69;
+  color: #000;
 }
 
 .btn-outline-success {
-  color: #128c7e;
+  color: #000;
   border-color: #128c7e;
 }
 
@@ -30,6 +43,13 @@ body {
   color: #fff;
 }
 
+#logo {
+  margin-top: 100px;
+  height: 14rem;
+  width: 14rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0.5rem #128c7e;
+}
 main {
   flex: 1;
 }
@@ -38,4 +58,31 @@ main {
   position: sticky;
   bottom: 0;
   width: 100%;
+}
+
+#brand {
+  font-size: 0.7rem;
+}
+#registerForm {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 5rem;
+}
+#registerForm input {
+  margin-bottom: 10px;
+}
+#registerForm button {
+  background-color: #128c7e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+#registerForm button:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #128c7e;
 }
