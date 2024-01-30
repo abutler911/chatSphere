@@ -2,14 +2,15 @@
 
 <ul class="list-group my-4">
   <% rooms.forEach(function(room) { %>
+
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    <%= room.name %>
+    <%= room.name %> - Created by <%= room.createdBy.username %>
     <div>
-      <a class="btn btn-success btn-sm mr-2" href="/room/<%= room.id %>"
+      <a class="btn btn-success btn-sm mr-2" href="/room/<%= room._id %>"
         >Join</a
       >
-      <% if (room.createdBy.toString() === user._id.toString()) { %>
-      <form class="d-inline" action="/deleteroom/<%= room.id %>" method="post">
+      <% if (room.createdBy._id.toString() === user._id.toString()) { %>
+      <form class="d-inline" action="/deleteroom/<%= room._id %>" method="post">
         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
       </form>
       <% } %>

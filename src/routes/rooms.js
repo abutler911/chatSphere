@@ -5,7 +5,7 @@ const Room = require("../models/Room");
 
 router.get("/rooms", isAuthenticated, async (req, res) => {
   try {
-    const rooms = await Room.find({});
+    const rooms = await Room.find({}).populate("createdBy", "username");
     res.render("rooms", {
       title: "Available Rooms",
       rooms: rooms,
