@@ -1,4 +1,10 @@
-<form id="loginForm" class="col-md-4">
+<% if (messages.error) { %>
+<div class="alert alert-danger"><%= messages.error %></div>
+<% } %> <% if (messages.success_msg) { %>
+<div class="alert alert-success"><%= messages.success_msg %></div>
+<% } %>
+
+<form id="loginForm" action="/login" method="post" class="col-md-4">
   <h1 class="text-center mb-4">Register for ChatSphere</h1>
   <input
     type="text"

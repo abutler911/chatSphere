@@ -5,6 +5,10 @@ const mongoose = require("mongoose");
 const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
 const path = require("path");
+const passport = require("passport");
+const flash = require("connect-flash");
+
+require("../config/passport-config")(passport);
 
 const connectDB = require("../config/database");
 
@@ -35,6 +39,7 @@ app.use(express.static("public"));
 // Middleware for body parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 // Session configuration
 app.use(
   session({
@@ -44,9 +49,15 @@ app.use(
   })
 );
 
+// Initialize Passport and restore authentication state, if any, from the session
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+
 // Define routes
 app.use("/", registerRouter);
-// app.use("/", authRouter);
+app.use("/", authRouter);
+app.use("/", roomsRouter);
 // app.use("/", chatRouter);
 // app.use("/", logoutRouter);
 // app.use("/", roomsRouter);
