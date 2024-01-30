@@ -1,11 +1,36 @@
-<!-- views/roomslist.ejs -->
-<h1>Chat Rooms</h1>
-<ul>
+<h1 id="roomHeading" class="text-center">Available Chat Rooms</h1>
+
+<ul class="list-group my-4">
   <% rooms.forEach(function(room) { %>
-  <li><%= room.name %> - <a href="/room/<%= room.id %>">Join</a></li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <%= room.name %>
+    <div>
+      <a class="btn btn-success btn-sm mr-2" href="/room/<%= room.id %>"
+        >Join</a
+      >
+      <% if (room.createdBy.toString() === user._id.toString()) { %>
+      <form class="d-inline" action="/deleteroom/<%= room.id %>" method="post">
+        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+      </form>
+      <% } %>
+    </div>
+  </li>
   <% }); %>
 </ul>
-<form action="/createroom" method="post">
-  <input type="text" name="roomName" placeholder="Room Name" required />
-  <button type="submit">Create Room</button>
+
+<form
+  id="createRoomForm"
+  action="/createroom"
+  method="post"
+  class="form-inline my-4 mb-3"
+>
+  <input
+    type="text"
+    name="roomName"
+    class="form-control mr-2"
+    placeholder="Room Name"
+    required
+    autocomplete="off"
+  />
+  <button type="submit" class="btn btn-success mt-3">Create Room</button>
 </form>

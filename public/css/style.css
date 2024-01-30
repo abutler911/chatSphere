@@ -63,17 +63,21 @@ main {
 #brand {
   font-size: 0.7rem;
 }
-#registerForm {
+
+#registerForm,
+#loginForm {
   background: white;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   margin-top: 5rem;
 }
-#registerForm input {
+#registerForm input,
+#loginForm input {
   margin-bottom: 10px;
 }
-#registerForm button {
+#registerForm button,
+#loginForm button {
   background-color: #128c7e;
   color: white;
   border: none;
@@ -81,8 +85,92 @@ main {
   padding: 10px 20px;
   cursor: pointer;
 }
-#registerForm button:hover {
+#registerForm button:hover,
+#loginForm button:hover {
   background-color: #fff;
   color: #000;
   border: 1px solid #128c7e;
+}
+
+.flash-message {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 1em;
+  color: #000000;
+}
+
+.flash-error {
+  background-color: #ff786e;
+  animation: fadeOut 5s ease-in-out forwards;
+}
+
+.flash-success {
+  background-color: #81c983;
+  animation: fadeOut 5s ease-in-out forwards;
+}
+
+/* Rooms List Styles */
+
+#roomHeading {
+  margin-bottom: 2rem;
+}
+
+.rooms-list {
+  list-style: none;
+  padding: 0;
+}
+
+.room-item {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+}
+
+.room-link {
+  text-decoration: none;
+}
+
+.room-delete-form {
+  margin: 0;
+}
+
+.room-delete-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.room-delete-button:hover {
+  background-color: #d32f2f;
+}
+
+#createRoomForm {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
 }
